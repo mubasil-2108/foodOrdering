@@ -3,40 +3,40 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MealCard = (props) => {
-    const isMobile = props.windowSize.width < 768;
-    return (
-        <div className="meal" style={{ width: isMobile ? '80%' : '90%' }}>
-            {
-                props.mealDetail ?
-                    props.mealDetail.map((meal, index) => {
-                        return (
-                            <StyledWrapper key={meal.idMeal}>
-                                <div className="card" style={{ width: isMobile ? '290px' : '290px' }}>
-                                    <div className="bg" />
-                                    <div className="blob" />
-                                    <div className='mealImg' style={{zIndex: 3, width: isMobile ? '280px' : '280px'}} >
-                                        <img src={meal.strMealThumb} />
-                                        <p>{meal.strMeal}</p>
-                                        <NavLink to={`/${meal.idMeal}`}>
-                                            <button className='mealCardButton'>Recipe</button>
-                                        </NavLink></div>
-                                </div>
-                            </StyledWrapper>
-                            // <div className='mealImg' key={meal.idMeal} style={{ width: isMobile ? '280px' : '280px' }}>
-                            //     <img src={meal.strMealThumb} />
-                            //     <p>{meal.strMeal}</p>
-                            //     <NavLink to={`/${meal.idMeal}`}>
-                            //         <button className='mealCardButton'>Recipe</button>
-                            //     </NavLink>
+  const isMobile = props.windowSize.width < 768;
+  return (
+    <div className="meal" style={{ width: isMobile ? '80%' : '90%' }}>
+      {
+        props.mealDetail ?
+          props.mealDetail.map((meal, index) => {
+            return (
+              <StyledWrapper key={meal.idMeal}>
+                <div className="card" style={{ width: isMobile ? '290px' : '290px' }}>
+                  <div className="bg" />
+                  <div className="blob" />
+                  <div className='mealImg' style={{ zIndex: 3, width: isMobile ? '280px' : '280px' }} >
+                    <img src={meal.strMealThumb} />
+                    <p>{meal.strMeal}</p>
+                    <NavLink to={`/${meal.idMeal}`}>
+                      <button className='mealCardButton'>Recipe</button>
+                    </NavLink></div>
+                </div>
+              </StyledWrapper>
+              // <div className='mealImg' key={meal.idMeal} style={{ width: isMobile ? '280px' : '280px' }}>
+              //     <img src={meal.strMealThumb} />
+              //     <p>{meal.strMeal}</p>
+              //     <NavLink to={`/${meal.idMeal}`}>
+              //         <button className='mealCardButton'>Recipe</button>
+              //     </NavLink>
 
-                            // </div>
-                        )
-                    })
-                    :
-                    ""
-            }
-        </div>
-    )
+              // </div>
+            )
+          })
+          :
+          <h1>Data Not Found</h1>
+      }
+    </div>
+  )
 }
 
 

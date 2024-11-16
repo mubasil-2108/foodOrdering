@@ -20,12 +20,13 @@ export function useHooks() {
         Categories();
     }, []);
 
-    
+
     const searchFood = async () => {
         if (search === "") {
             setMsg("Please enter something to search");
         }
-         else {
+
+        else {
             setIsLoading(true);
             setMsg('');
             const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`

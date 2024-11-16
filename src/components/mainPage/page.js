@@ -33,7 +33,6 @@ const MainPage = ({ windowSize }) => {
             </div>
             <div>
                 {
-
                     msg ?
                         <h3 className='head'>{msg}</h3>
                         :
@@ -64,14 +63,16 @@ const MainPage = ({ windowSize }) => {
                                     }
                                 </div>
                             </div>
-                            : null
-                }
-                {isLoading ?
+                            : isLoading ?
+                                <Loader />
+                                :
+                                <MealCard mealDetail={searchResults} windowSize={windowSize} />
 
-                    <Loader />
-                    :
-                    <MealCard mealDetail={searchResults} windowSize={windowSize} />
                 }
+                {/* {isLoading ?
+
+                    
+                } */}
             </div>
         </div>
     )

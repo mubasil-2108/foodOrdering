@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-const MealInfo = ({windowSize}) => {
+const MealInfo = ({ windowSize }) => {
     const { mealid } = useParams();
     const [mealInfos, setMealInfos] = useState();
     const isMobile = windowSize.width < 768;
@@ -21,9 +21,9 @@ const MealInfo = ({windowSize}) => {
             {
                 !mealInfos ? <h1>Data Not Found</h1>
                     :
-                    <div className='mealInfos' style={{flexDirection : isMobile && 'column', height:'auto', paddingTop: isMobile && '30px'}} >
-                        <img src={mealInfos.strMealThumb} style={{ position:'relative', width : isMobile && '320px',  height : isMobile && '320px', }} />
-                        <div className='info' style={{marginTop: isMobile && 0, display: isMobile &&'flex', flexDirection: isMobile &&'column'}}>
+                    <div className='mealInfos' style={{ flexDirection: isMobile && 'column', height: 'auto', paddingTop: isMobile && '30px' }} >
+                        <img src={mealInfos.strMealThumb} style={{ position: 'relative', width: isMobile && '320px', height: isMobile && '320px', }} />
+                        <div className='info' style={{ marginTop: isMobile && 0, display: isMobile && 'flex', flexDirection: isMobile && 'column' }}>
                             <h1>Recipe Detail</h1>
                             <button >{mealInfos.strMeal}</button>
                             <h3>Instruction's</h3>

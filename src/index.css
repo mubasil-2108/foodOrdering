@@ -95,11 +95,13 @@ code {
 .mealInfo .info {
   margin-top: -112px;
 }
+
 .headMain {
   text-align: center;
   font-family: serif;
-  
+
 }
+
 .head {
   text-align: center;
   font-family: serif;
@@ -119,7 +121,7 @@ code {
   position: absolute;
   width: 76%;
   height: 87%;
-  gap:10px;
+  gap: 10px;
   animation: slide var(--slide-duration) infinite linear
     /* Controls the speed and looping */
 }
@@ -150,7 +152,7 @@ code {
     0% {
       transform: translateY(0);
     }
-  
+
     100% {
       transform: translateY(calc(-100% * var(--category-count)));
     }
